@@ -1,0 +1,111 @@
+    <div class="encabezado">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <img class="logo" src="assets/img/aplogo.png" alt="Argentina Programa">
+      <h4 class="subtitulo">#YoProgramo</h4>
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"></a>
+          <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon bg-light"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto" style="margin-left: auto;">
+              <li class="nav-item">
+                <a href="#"><i class="fab fa-facebook" style="font-size: 30px; color: grey; margin-left: auto;"></i></a> 
+              </li>
+              <li class="nav-item">
+                <a href="#"><i class="fab fa-instagram-square" style="font-size: 30px;color: grey; margin-left: auto;"></i></a>
+              </li>
+              <li class="nav-item">
+                <a href="#"> <i class="fab fa-twitter" style="font-size: 30px;color: grey; margin-left: auto;"></i></a>
+              </li>
+              <li class="nav-item">
+                <a href="https://www.linkedin.com/in/christian-daniel-calleja-a7b849221/" target="_blank"> <i class="fa-brands fa-linkedin" style="font-size: 30px;color: grey;"></i></a>
+              </li>
+              <form class="d-flex" style="margin-left: auto;">
+                <button class="btn btn-outline-success" type="submit" >Login</button>            
+              </form>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div class="card mat-card">
+      <div id="profile-background">
+        <img src="assets/img/bannerimg.jpg" alt="banner">
+      </div>
+    </div>
+    <div class="card mat-card" id="first-card">
+      <div id="info" style="padding: 16px">
+        <div id="info-img">
+          <img id="info-user-img" class="profile-image" src="assets/img/profpic.jpg">
+          <!-- <div class="btn-edit"><a href="#" class="btn-right"><i class="fa fa-pen" onclick=""></i></a></div> -->
+          
+        </div>
+        <div id="info-data">
+          <div class="main-container">
+            <div  *ngFor="let persona of persona">
+              <h1 id="info-name">{{persona.name}}
+                <button (click)="onOpenModal(persona, 'edit')" type="button" class="openButton">
+                  <i class="fa fa-pencil"></i></button>
+              </h1>
+              <div><span id="info-position">{{persona.jobTitle}}</span> </div>
+              <div id="info-contact">
+                <span id="info-ubication">Buenos Aires (Argentina) </span>
+                <br>
+                <span>Información de contacto: {{persona.email}}</span>
+              </div>
+            </div>
+          </div>
+          <ul id="info-details">
+            <li><a href="#">
+              <img id="info-school-img" src="assets/img/logoubaderecho.jpg">
+              <h5 id="info-school-name">Universidad de Buenos Aires - Facultad de Derecho</h5>
+            </a></li>
+          </ul>
+        </div>
+        <div id="info-actions">
+          <button type="button" class="btn btn-primary">Tengo interés en</button>
+          <button type="button" class="btn btn-light">Añadir Sección</button>
+          <button type="button" class="btn btn-light">Más</button>
+        </div>
+      </div>
+  </div>
+  
+  
+  
+  <!-- Edit Modal -->
+<div class="modal fade" id="updatePersonaModal" data-backdrop="static" data-keyboard="false" tabindex="-1"
+role="dialog" aria-labelledby="updatePersonaModal" aria-hidden="true">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="staticBackdropLabel">Editar persona{{editPersona?.name}}</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form #editForm="ngForm">
+        <label for="name">Nombre Completo</label><br>
+        <input type="text" ngModel="{{editPersona?.name}}" name="name" class="form-control" id="name"
+          placeholder="Nombre completo" required>
+        <label for="email">Email</label><br>
+        <input type="text" ngModel="{{editPersona?.email}}" name="email" class="form-control" id="email"
+          placeholder="Email" required>
+        <label for="jobTitle">Puesto</label><br>
+        <input type="text" ngModel="{{editPersona?.jobTitle}}" name="jobTitle" class="form-control" id="jobTitle"
+          placeholder="Puesto" required>
+        <input type="hidden" name="id" ngModel="{{editPersona?.id}}" class="form-control" id="id" placeholder="">
+        <input type="hidden" name="educacionCode" ngModel="{{editPersona?.personaCode}}" id="educacionCode"
+          placeholder="">
+        <div class="modal-footer">
+          <button id="update-educacion-modal" type="button" data-dismiss="modal"
+            class="btn btn-secondary">Cerrar</button>
+            <button (click)="onUpdatePersona (editForm.value)" data-dismiss="modal" class="btn btn-primary">Guardar
+              Cambios</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+</div>

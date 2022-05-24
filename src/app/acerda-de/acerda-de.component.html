@@ -1,0 +1,38 @@
+<div class="card mat-card">
+    <div class="contenido" id="main-container">
+        <h5>Acerca de</h5>
+    </div>    
+    <div id="about">
+        <div class="btn-edit"></div>
+        Tengo 36 años. Vivo en la ciudad de Buenos Aires. Me recibí de abogado en 2011. Actualmente estudiando Full Stack.
+        <button (click)="onOpenModal('edit')" type="button" class="openButton">
+            <i class="fa fa-pencil"></i></button>
+    </div>
+</div>
+
+
+<!-- Edit Modal -->
+<div class="modal fade" id="updateAcercaDe" data-backdrop="static" data-keyboard="false" tabindex="-1"
+  role="dialog" aria-labelledby="updateAcercaDe" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Editar Info </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <label for="acercaDe">Editar Acerca de</label><br>
+          <input ngModel type="text" name="acercaDe" class="form-control">
+          <div class="modal-footer">
+            <button id="update-acercaDe-modal" type="button" data-dismiss="modal"
+              class="btn btn-secondary">Cerrar</button>
+            <button data-dismiss="modal" class="btn btn-primary">Guardar Cambios</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
