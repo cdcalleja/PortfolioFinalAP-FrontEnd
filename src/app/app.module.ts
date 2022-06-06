@@ -14,6 +14,7 @@ import { EducacionComponent } from './educacion/educacion.component';
 import { SkillsComponent } from './skills/skills.component';
 import { ProyectosComponent } from './proyectos/proyectos.component';
 import { FormsModule } from '@angular/forms';
+import { NavbarComponent } from './navbar/navbar.component';
 
 
 
@@ -27,6 +28,7 @@ import { FormsModule } from '@angular/forms';
     EducacionComponent,
     SkillsComponent,
     ProyectosComponent,
+    NavbarComponent,
 
   ],
   imports: [
