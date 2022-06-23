@@ -15,7 +15,7 @@
           <div class="main-container">
             <div  *ngFor="let persona of persona">
               <h1 id="info-name">{{persona.name}}
-                <button (click)="onOpenModal(persona, 'edit')" type="button" class="openButton">
+                <button type="button" class="openButton" (click)="onOpenModal(persona, 'edit')" *ngIf="isAdmin">
                   <i class="fa fa-pencil"></i></button>
               </h1>
               <div><span id="info-position">{{persona.jobTitle}}</span> </div>

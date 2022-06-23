@@ -1,8 +1,9 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Persona } from '../persona';
-import { PersonaService } from '../persona.service';
+import { TokenService } from '../security/service/token.service';
+import { Persona } from './persona';
+import { PersonaService } from './persona.service';
 
 
 @Component({
@@ -12,14 +13,23 @@ import { PersonaService } from '../persona.service';
 })
 export class HeaderComponent implements OnInit {
   public persona: Persona[];
-  public editPersona!: Persona;
+  public editPersona: Persona;
+  roles: string[];
+  isAdmin: boolean = false;
 
-  constructor(private personaService: PersonaService) {
-    this.persona = [];
+  constructor(private personaService: PersonaService, private tokenService: TokenService) {
+    
    }
 
   ngOnInit() {
     this.getPersonas();
+    this.roles = this.tokenService.getAuthorities();
+    this.roles.forEach( role => {
+      if(role === 'ROLE_ADMIN') {
+        this.isAdmin = true;
+      }
+    })
+
   }
 
   public getPersonas(): void {

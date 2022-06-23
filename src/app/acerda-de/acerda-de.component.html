@@ -5,7 +5,7 @@
     <div id="about">
         <div class="btn-edit"></div>
         Tengo 36 años. Vivo en la ciudad de Buenos Aires. Me recibí de abogado en 2011. Actualmente estudiando Full Stack.
-        <button (click)="onOpenModal('edit')" type="button" class="openButton">
+        <button type="button" class="openButton" (click)="onOpenModal('edit')" *ngIf="isAdmin">
             <i class="fa fa-pencil"></i></button>
     </div>
 </div>

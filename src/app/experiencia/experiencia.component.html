@@ -3,7 +3,7 @@
   <div class="contenido" id="main-container">
     <div id="trabajo">
       <h4 class="experiencia"> Experiencia Laboral
-        <button (click)="onOpenModal(null!, 'add')" type="button" class="openButton">
+        <button type="button" class="openButton" (click)="onOpenModal(null!, 'add')" *ngIf="isAdmin">
           <i class="fa fa-plus"></i>
         </button>
       </h4>
@@ -14,14 +14,14 @@
             <p>{{experiencia.mode}}</p>
             <p>{{experiencia.start}} - {{experiencia.end}}</p>
             <p>{{experiencia.timeElapsed}}</p>
-            <div id="eliminar-editar-trabajos">
+            <span id="eliminar-editar-trabajos" *ngIf="isAdmin">
               <button (click)="onOpenModal(experiencia, 'edit')" type="button" class=" botones">
                 <i class="fa fa-pencil"></i>
               </button>
               <button (click)="onOpenModal(experiencia,'delete')" type="button" class="botones">
                 <i class="fa-solid fa-eraser"></i>
               </button>
-            </div>
+            </span>
             <p>{{experiencia.place}}</p>  
             <hr style="color: black; background-color: black; width:100%;" />
             <br>

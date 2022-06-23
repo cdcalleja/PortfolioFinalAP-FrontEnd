@@ -1,15 +1,15 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Educacion } from './educacion';
-import { EducacionService } from './educacion.service';
-import { Experiencia } from './experiencia';
-import { ExperienciaService } from './experiencia.service';
-import { Persona } from './persona';
-import { PersonaService } from './persona.service';
-import { Proyectos } from './proyectos';
-import { ProyectosService } from './proyectos.service';
-import { Skills } from './skills';
-import { SkillsService } from './skills.service';
+import { Educacion } from './educacion/educacion';
+import { EducacionService } from './educacion/educacion.service';
+import { Experiencia } from './experiencia/experiencia';
+import { ExperienciaService } from './experiencia/experiencia.service';
+import { Persona } from './header/persona';
+import { PersonaService } from './header/persona.service';
+import { Proyectos } from './proyectos/proyectos';
+import { ProyectosService } from './proyectos/proyectos.service';
+import { Skills } from './skills/skills';
+import { SkillsService } from './skills/skills.service';
 
 @Component({
   selector: 'app-root',

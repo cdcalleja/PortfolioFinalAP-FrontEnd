@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TokenService } from '../security/service/token.service';
 
 @Component({
   selector: 'app-acerda-de',
@@ -6,10 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./acerda-de.component.css']
 })
 export class AcerdaDeComponent implements OnInit {
+  roles: string[];
+  isAdmin = false;
 
-  constructor() { }
+  constructor(
+    private tokenService: TokenService) { }
 
   ngOnInit(): void {
+    this.roles = this.tokenService.getAuthorities();
+    this.roles.forEach((rol) => {
+      if (rol === 'ROLE_ADMIN') {
+        this.isAdmin = true;
+      }
+    });
   }
 
 

@@ -1,8 +1,9 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Proyectos } from '../proyectos';
-import { ProyectosService } from '../proyectos.service';
+import { TokenService } from '../security/service/token.service';
+import { Proyectos } from './proyectos';
+import { ProyectosService } from './proyectos.service';
 
 
 
@@ -13,16 +14,24 @@ import { ProyectosService } from '../proyectos.service';
 })
 export class ProyectosComponent implements OnInit {
   public proyecto: Proyectos[];
-  public editProyecto!: Proyectos;
-  public deleteProyecto!: Proyectos;
+  public editProyecto: Proyectos;
+  public deleteProyecto: Proyectos;
+  roles: string[];
+  isAdmin = false;
 
-  constructor(private proyectosService: ProyectosService) { 
-    this.proyecto = [];
+  constructor(private proyectosService: ProyectosService, 
+    private tokenService: TokenService) { 
    }
   
 
   ngOnInit() {
     this.getProyectos();
+    this.roles = this.tokenService.getAuthorities();
+    this.roles.forEach((rol) => {
+      if (rol === 'ROLE_ADMIN') {
+        this.isAdmin = true;
+      }
+    });
   }
 
   public getProyectos(): void {

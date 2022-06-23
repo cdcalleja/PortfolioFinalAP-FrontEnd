@@ -1,0 +1,17 @@
+
+<div class="container text-center">
+    <div *ngIf="isLogged else loggedOut">
+        <h2>Bienvenido {{nombreUsuario}}</h2>
+    </div>
+    <ng-template #loggedOut> <h2>No has iniciado Sesión</h2></ng-template>
+</div>
+
+<app-navbar></app-navbar>
+ <app-header></app-header>
+<app-acerda-de></app-acerda-de>
+<app-experiencia></app-experiencia>
+<app-educacion></app-educacion>
+<app-skills></app-skills>
+<app-proyectos></app-proyectos>
+
+

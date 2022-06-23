@@ -2,20 +2,21 @@
   <div class="contenido" id="main-container">
     <div id="education">
       <h4 class="educacion">Educación
-        <button (click)="onOpenModal(null!,'add')" type="button" class="openButton"> <i class="fa fa-plus"></i>
+        <button type="button" class="openButton" (click)="onOpenModal(null!,'add')" *ngIf="isAdmin">
+          <i class="fa fa-plus"></i>
         </button> </h4>
       <div>
         <div class="listaeducaciones" *ngFor="let educacion of educacion" class="achivements">
           <div class="listaeducacionesparrafos">
             <p class="nombreeducacion"><span class="educacion">{{educacion.school}}</span> - {{educacion.title}}</p>
-            <div id="eliminar-editar-educaciones">
+            <span id="eliminar-editar-educaciones" *ngIf="isAdmin">
               <button (click)="onOpenModal(educacion,'edit')" type="button" class="botones">
                 <i class="fa fa-pencil"></i>
               </button>
               <button (click)="onOpenModal(educacion,'delete')" type="button" class="botones">
                 <i class="fa-solid fa-eraser"></i>
               </button>
-            </div>
+            </span>
             <p>{{educacion.start}} - {{educacion.end}} </p>
             <hr style="color: black; background-color: black; width:100%;" />
             <br>

@@ -2,7 +2,7 @@
   <div class="contenido" id="main-container">
     <div id="proyectos">
       <h4>Proyectos
-        <button (click)="onOpenModal(null!,'add')" type="button" class="openButton">
+        <button type="button" class="openButton" (click)="onOpenModal(null!,'add')" *ngIf="isAdmin">
           <i class="fa fa-plus"></i>
         </button></h4>
     </div>
@@ -11,14 +11,14 @@
         <p class="nombreproyecto"><span class="nombre">{{proyecto.name}}</span></p>
         <p>{{proyecto.start}} - {{proyecto.end}}</p>
         <p> {{proyecto.description}}</p>
-        <div id="eliminar-editar-proyectos">
+        <span id="eliminar-editar-proyectos" *ngIf="isAdmin">
           <button (click)="onOpenModal(proyecto,'edit')" type="button" class="botones">
             <i class="fa fa-pencil"></i>
           </button>
           <button (click)="onOpenModal(proyecto,'delete')" type="button" class="botones">
             <i class="fa-solid fa-eraser"></i>
           </button>
-        </div>
+        </span>
         <p>{{proyecto.url}}</p>
         <hr style="color: black; background-color: black; width:100%;" />
             <br>
