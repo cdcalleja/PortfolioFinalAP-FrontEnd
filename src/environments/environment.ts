@@ -4,8 +4,10 @@
 
 export const environment = {
   production: false,
-  apiBaseUrl: 'http://localhost:8080',
-  apiAuthUrl: 'http://localhost:8080'
+  // apiBaseUrl: 'http://localhost:8080',
+  // apiAuthUrl: 'http://localhost:8080'
+  apiBaseUrl: 'https://calm-cliffs-56801.herokuapp.com/',
+  apiAuthUrl: 'https://calm-cliffs-56801.herokuapp.com/auth'
 };
 
 /*
