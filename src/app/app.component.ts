@@ -16,85 +16,85 @@ import { SkillsService } from './skills/skills.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit{
+export class AppComponent {
 
+title = 'PortfolioFinalAP';
+  // public persona: Persona[];
+  // public educacion: Educacion[];
+  // public experiencia: Experiencia[];
+  // public skill: Skills [];
+  // public proyecto: Proyectos[];
 
-  public persona: Persona[];
-  public educacion: Educacion[];
-  public experiencia: Experiencia[];
-  public skill: Skills [];
-  public proyecto: Proyectos[];
+  // constructor(private personaService: PersonaService, private educacionService: EducacionService, 
+  //   private experienciaService: ExperienciaService, private skillsService: SkillsService, private proyectosService: ProyectosService) { 
+  //   this.persona = [];
+  //   this.educacion = [];
+  //   this.experiencia = [];
+  //   this.skill = [];
+  //   this.proyecto = [];
+  // }
 
-  constructor(private personaService: PersonaService, private educacionService: EducacionService, 
-    private experienciaService: ExperienciaService, private skillsService: SkillsService, private proyectosService: ProyectosService) { 
-    this.persona = [];
-    this.educacion = [];
-    this.experiencia = [];
-    this.skill = [];
-    this.proyecto = [];
-  }
+  // ngOnInit() {
+  //   this.getPersonas();
+  //   this.getEducaciones();
+  //   this.getExperiencias();
+  //   this.getProyectos();
+  //   this.getSkills();
+  // }
+  // public getPersonas(): void {
+  //   this.personaService.getPersonas().subscribe(
+  //     (response: Persona[]) => {
+  //       this.persona = response;
+  //     },
+  //     (error: HttpErrorResponse) => {
+  //       alert(error.message);
+  //     }
+  //   );
+  // }
 
-  ngOnInit() {
-    this.getPersonas();
-    this.getEducaciones();
-    this.getExperiencias();
-    this.getProyectos();
-    this.getSkills();
-  }
-  public getPersonas(): void {
-    this.personaService.getPersonas().subscribe(
-      (response: Persona[]) => {
-        this.persona = response;
-      },
-      (error: HttpErrorResponse) => {
-        alert(error.message);
-      }
-    );
-  }
-
-  public getEducaciones(): void {
-    this.educacionService.getEducaciones().subscribe(
-      (response: Educacion[]) => {
-        this.educacion = response;
-      },
-      (error: HttpErrorResponse) => {
-        alert(error.message);
-      }
-    );
-  }
+  // public getEducaciones(): void {
+  //   this.educacionService.getEducaciones().subscribe(
+  //     (response: Educacion[]) => {
+  //       this.educacion = response;
+  //     },
+  //     (error: HttpErrorResponse) => {
+  //       alert(error.message);
+  //     }
+  //   );
+  // }
     
-  public getExperiencias(): void {
-    this.experienciaService.getExperiencias().subscribe(
-      (response: Experiencia[]) => {
-        this.experiencia = response;
-      },
-      (error: HttpErrorResponse) => {
-        alert(error.message);
-      }
-    );
-  }
+  // public getExperiencias(): void {
+  //   this.experienciaService.getExperiencias().subscribe(
+  //     (response: Experiencia[]) => {
+  //       this.experiencia = response;
+  //     },
+  //     (error: HttpErrorResponse) => {
+  //       alert(error.message);
+  //     }
+  //   );
+  // }
 
-  public getSkills(): void {
-    this.skillsService.getSkills().subscribe(
-      (response: Skills[]) => {
-        this.skill = response;
-      },
-      (error: HttpErrorResponse) => {
-        alert(error.message);
-      }
-    );
-  }
+  // public getSkills(): void {
+  //   this.skillsService.getSkills().subscribe(
+  //     (response: Skills[]) => {
+  //       this.skill = response;
+  //     },
+  //     (error: HttpErrorResponse) => {
+  //       alert(error.message);
+  //     }
+  //   );
+  // }
 
-  public getProyectos(): void {
-    this.proyectosService.getProyectos().subscribe(
-      (response: Proyectos[]) => {
-        this.proyecto = response;
-      },
-      (error: HttpErrorResponse) => {
-        alert(error.message);
-      }
-    );
-  }
+  // public getProyectos(): void {
+  //   this.proyectosService.getProyectos().subscribe(
+  //     (response: Proyectos[]) => {
+  //       this.proyecto = response;
+  //     },
+  //     (error: HttpErrorResponse) => {
+  //       alert(error.message);
+  //     }
+  //   );
+  // }
     
   }
 
